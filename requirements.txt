@@ -1,3 +1,7 @@
+# Linting, Checking and Formatting
+pylint
 mypy
 black
-pylint
+
+# FastAPI Dependencies
+fastapi[all]

@@ -3,6 +3,13 @@
 run: src/main.py
 	./.venv/bin/python src/main.py
 
+start:
+	uvicorn src.app.main:app --reload
+
+test:
+	pylint src/main.py;		\
+	mypy src/main.py
+
 install:
 	python -m venv .venv
 	./.venv/bin/pip install --upgrade pip
@@ -14,4 +21,5 @@ update: requirements.txt
 
 clean:
 	rm -rf .venv
-	rm -rf __pycache__
+	rm -rf .mypy_cache
+	rm -rf src/__pycache__
